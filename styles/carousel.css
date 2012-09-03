@@ -1,0 +1,69 @@
+#carousel{
+	background: black;
+	width:500px;
+	height: 380px;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.item img{
+	padding-top: 30px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 300px;
+}
+
+.item .caption{
+	text-align: center;;
+	padding-top: 8px;
+	height: 30px;
+	background: black;
+	color: white;
+}
+
+.hidden{
+	opacity: 0;
+}
+
+.selected{
+	display: block;
+	-webkit-animation: fade-in 2s;
+	-moz-animation:    fade-in 2s;
+	-ms-animation:     fade-in 2s;
+	-o-animation:      fade-in 2s;
+}
+
+@-webkit-keyframes fade-in {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-moz-keyframes fade-in {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-ms-keyframes fade-in {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-o-keyframes fade-in {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@-webkit-keyframes fade-out {
+	0%   { opacity: 1; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes fade-out {
+	0%   { opacity: 1; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes fade-out {
+	0%   { opacity: 1; }
+	100% { opacity: 0; }
+}
+@-o-keyframes fade-out {
+	0%   { opacity: 1; }
+	100% { opacity: 0; }
+}

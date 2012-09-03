@@ -1,0 +1,43 @@
+/* Basic button layout */
+.btn{
+	line-height: 1.22 em;
+	padding: 6px 20px;
+	font-family: verdana;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: center;
+	text-transfer: uppercase;
+	background: #A695520;
+	border: 1px solid #282727;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 12px;
+	box-shadow: 1px 3px 5px #555;
+}
+
+.btn-gray{
+	background: rgb(230, 230, 230);
+	background: -moz-linear-gradient(268deg, rgb(230, 230, 230) 47%, rgb(255, 255, 255) 77%);
+	background: -webkit-linear-gradient(268deg, rgb(230, 230, 230) 47%, rgb(255, 255, 255) 77%);
+	background: -o-linear-gradient(268deg, rgb(230, 230, 230) 47%, rgb(255, 255, 255) 77%);
+	background: -ms-linear-gradient(268deg, rgb(230, 230, 230) 47%, rgb(255, 255, 255) 77%);
+	background: linear-gradient(268deg, rgb(230, 230, 230) 47%, rgb(255, 255, 255) 77%);
+}
+
+.btn-warning{
+	background: rgb(218, 78, 73);
+	background: -moz-linear-gradient(268deg, rgb(218, 78, 73) 47%, rgb(255, 255, 255) 77%);
+	background: -webkit-linear-gradient(268deg, rgb(218, 78, 73) 47%, rgb(255, 255, 255) 77%);
+	background: -o-linear-gradient(268deg, rgb(218, 78, 73) 47%, rgb(255, 255, 255) 77%);
+	background: -ms-linear-gradient(268deg, rgb(218, 78, 73) 47%, rgb(255, 255, 255) 77%);
+	background: linear-gradient(268deg, rgb(218, 78, 73) 47%, rgb(255, 255, 255) 77%);
+}
+
+.btn-save{
+	background: rgb(73, 175, 205);
+	background: -moz-linear-gradient(268deg, rgb(73, 175, 205) 47%, rgb(255, 255, 255) 77%);
+	background: -webkit-linear-gradient(268deg, rgb(73, 175, 205) 47%, rgb(255, 255, 255) 77%);
+	background: -o-linear-gradient(268deg, rgb(73, 175, 205) 47%, rgb(255, 255, 255) 77%);
+	background: -ms-linear-gradient(268deg, rgb(73, 175, 205) 47%, rgb(255, 255, 255) 77%);
+	background: linear-gradient(268deg, rgb(73, 175, 205) 47%, rgb(255, 255, 255) 77%);
+}

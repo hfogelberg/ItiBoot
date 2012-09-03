@@ -1,0 +1,15 @@
+#adv-leaf{  
+    background:orange;  
+    border-width:4px 30px 4px 30px;  
+    border-style:solid;  
+    border-color:#56c6d9 #56c6d9 #fe2192 #fe2192;  
+    border-radius:0 120px 0 120px;  
+    -moz-border-radius:0 120px 0 120px;  
+    -webkit-border-radius:0 120px 0 120px;  
+    width:200px;  
+    height:200px;  
+    color:#fff;  
+    font-weight:bold;  
+    line-height:180px;  
+    text-align:center;  
+}  

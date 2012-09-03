@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="sv">
+<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<tite="SimplePop"/>
+		<meta charset="utf-8">
+
+	<style>
+			#chromeframe{
+			padding: 2em;
+			background: grey;
+			position:absolute;
+			top: 50%;
+			left: 50%;
+			width:20em;
+			margin-left: -10em; /*set to a negative number 1/2 of your width*/
+			height:8em;
+			margin-top: -4em; /*set to a negative number 1/2 of your height*/
+			border: 2px;
+		}
+
+			#popClose{
+				float: right;
+				margin-right: 2em;
+			}
+	</style>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#popClose').click(function(){
+	    	$('#chromeframe').hide();
+	  	});
+		});
+	</script>
+</head>
+
+<body>
+	 <div id='chromeframe'>
+	 	<p>
+		 	Din webläsare är <em>uråldrig!</em> <a href="http://browsehappy.com/">Byt till en annan</a> eller installera <a href="http://www.google.com/chromeframe/?redirect=true">Google Chrome Frame</a> för att uppleva Internet ordentligt.
+			 </p>
+		 	<div><a href="#" id="popClose">Ok</a></div>
+	 </div>
+	</body>
+</html>
