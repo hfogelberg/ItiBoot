@@ -1,9 +1,17 @@
 #carousel{
-	background: black;
-	width:500px;
-	height: 380px;
-	border-radius: 12px;
+	width: 450px;
+	height: 330px;
 	overflow: hidden;
+	float: left;
+	padding: 3px;
+}
+
+.carousel-container{
+	padding: 5px;
+}
+
+.item{	
+	border-radius: 8px;
 }
 
 .item img{
@@ -11,19 +19,26 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 300px;
+	height: 280px;
 }
 
 .item .caption{
-	text-align: center;;
-	padding-top: 8px;
-	height: 30px;
-	background: black;
-	color: white;
+	text-align: center;
+	height: 40px;
+	padding-top: 3px;
+	margin-bottom: 3px;
 }
 
 .hidden{
 	opacity: 0;
+}
+
+.item:not(.selected){
+	-webkit-animation: fade-out 2s;
+	-moz-animation:    fade-out 2s;
+	-ms-animation:     fade-out 2s;
+	-o-animation:      fade-out 2s;
+	display: none;
 }
 
 .selected{

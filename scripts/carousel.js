@@ -1,17 +1,13 @@
-$(document).ready(function(){
-	var numItems = $('.item').length;
-	if(numItems > 0){
-		$('#carousel .item:eq(0)').addClass('selected');
-	}else{
-		$('carousel').css('display', 'none');
-	}
-});
+var selectedItem = 0;
 
 setInterval(function(){
 	var numItems = $('.item').length;
-	if (numItems > 1){
-		$('.selected').toggleClass('selected');
-		var randomItem = Math.floor((Math.random()*numItems)+1)-1;		
-		$("#carousel .item:eq("+randomItem+")").toggleClass('selected');		
+	if (numItems > 0){
+		$(".selected").removeClass("selected");
+		selectedItem += 1;
+		if (selectedItem == numItems){
+			selectedItem = 0;
+		}
+		$("#carousel .item:eq(" + selectedItem + ")").addClass("selected");
 	}
-},5000);
+},7000);
