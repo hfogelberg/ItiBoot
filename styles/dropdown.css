@@ -5,25 +5,51 @@
 
 /* Basic markup for list containing drop down */
 .dropdown ul{
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
 	position: absolute;
-	width: 80px;
+	width: 120px;
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	padding: 8px;
+	padding: 4px;
 	display: none;
-	background: #fff;
 	opacity: 1;
 	z-index: 20;				/* Ensure that the list will be in front of anything else */
 }
 
+.dropdown li{
+	padding-top: 4px;
+}
+
 /* In case you need a frame around the drop down */
-.framed{
-		border-radius: 8px;
-	border: solid 1px black;
-	-moz-box-shadow: 6px 6px 3px #888;
-	-webkit-box-shadow: 6px 6px 3px #888;
-	box-shadow: 6px 6px 3px #888;
+.dropdown ul.framed{
+	overflow: hidden;
+	z-index: 20;
+	opacity: 1;
+	border-radius: 8px;
+	-moz-box-shadow: 10px 10px 5px rgb(100, 126, 152);
+	-webkit-box-shadow: 10px 10px 5px rgb(100, 126, 152);
+	box-shadow: 10px 10px 5px rgb(100, 126, 152);
+}
+
+.dropdown ul.gray{
+	background: rgb(194, 205, 215);
+}
+
+ul.tab-header:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #000;
+    z-index: 1;
+}
+
+ul.gray{
+	background: #C2CDD7;
 }
 
 .dropdown a{
@@ -33,8 +59,7 @@
 
 /* Change color when hovering over the link dropping the list */
 .dropdown li:hover{
-	color: #fff;
-	background-color: #369;
+	background-color: rgb(146, 166, 185);
 }
 
 .arrow-down {

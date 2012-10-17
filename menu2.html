@@ -1,25 +1,15 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Itio menu</title>
-
+	<title>Menu 2</title>
+	
 	<link rel="stylesheet" type="text/css" href="styles/menu.css" />
 	<link rel="stylesheet" type="text/css" href="styles/dropdown.css" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-	<script>
-		$(function(){ 
-			alert('Hej');
-	    // Display dropdown list when link is clicked
-	    $('.dropdown a').click(function(event){ 
-	      $("#log2").html("clicked: " + event.target);
-	      $(event.target).next('ul').show();                        
-	  });
-	});​
-	</script>
+	<script src="scripts/jquery-1.6.2.min.js" ></script>
+	<script src="scripts/dropdown.js"></script>
 </head>
-
 <body>
-  <div id='menu' class='horizontal'>
+
+  <nav id='menu' class='horizontal'>
     <ul>
         <li class='divider'><a href="#">Hem</a></li>
         <li class='divider'><a href="#">Om</a></li>
