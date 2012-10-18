@@ -6,9 +6,10 @@ $ ->
   interval = 5000
   numItems = $(".item").length
 
-  $("#pause").click ->
+  $("#onOff").click ->
     if isRunning == false
       carousel.selectedItem += 1
+      carousel.selectedItem = 0  if carousel.selectedItem is numItems
       displayImage(carousel.selectedItem)
       timerId = startCarousel(interval, carousel.selectedItem, numItems)
       isRunning = true
@@ -18,6 +19,7 @@ $ ->
 
   $("#next").click ->
     carousel.selectedItem += 1
+    carousel.selectedItem = 0  if carousel.selectedItem is numItems
     displayImage(carousel.selectedItem)
 
   $("#pop").click ->

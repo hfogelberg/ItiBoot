@@ -70,6 +70,9 @@
     display: inline-block;
     cursor: pointer;
     width: 50px; }
+  #carousel ul.tools li#message {
+    width: 80px;
+    background: yellow; }
   #carousel .item {
     border-radius: 8px; }
   #carousel .item img {

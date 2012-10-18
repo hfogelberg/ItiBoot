@@ -10,9 +10,12 @@
     timerId = 0;
     interval = 5000;
     numItems = $(".item").length;
-    $("#pause").click(function() {
+    $("#onOff").click(function() {
       if (isRunning === false) {
         carousel.selectedItem += 1;
+        if (carousel.selectedItem === numItems) {
+          carousel.selectedItem = 0;
+        }
         displayImage(carousel.selectedItem);
         timerId = startCarousel(interval, carousel.selectedItem, numItems);
         return isRunning = true;
@@ -23,6 +26,9 @@
     });
     $("#next").click(function() {
       carousel.selectedItem += 1;
+      if (carousel.selectedItem === numItems) {
+        carousel.selectedItem = 0;
+      }
       return displayImage(carousel.selectedItem);
     });
     return $("#pop").click(function() {
