@@ -2,14 +2,14 @@
 /*(c) Henrk Fogelberg henrik.fogelberg@gmail.com*/
 
 #popUp{
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
+	position: absolute;
+	border-radius: 6px;
 	background: white;
 	display: none;
 	position: fixed;
 	height: 384px;
 	width: 408px;
-	z-index: 1;
+	z-index: 5;
 	padding: 12px;
 }
 
@@ -21,7 +21,7 @@
 	top: 0;
 	left: 0;
 	background: #000000;
-	z-index: -1;
+	z-index: 1;
 }
 
 #popClose{

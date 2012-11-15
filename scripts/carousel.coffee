@@ -22,17 +22,33 @@ $ ->
     carousel.selectedItem = 0  if carousel.selectedItem is numItems
     displayImage(carousel.selectedItem)
 
+  $("#previous").click ->
+    carousel.selectedItem -= 1
+    carousel.selectedItem = (numItems - 1) if carousel.selectedItem is 0
+    displayImage(carousel.selectedItem)
+
   $("#pop").click ->
-    alert "Pop"
+    $("#popBackground").css({ "opacity": "0.7", "display": "block"})
+    $("#popBackground").fadeIn("slow")
+    docHeight = document.documentElement.clientHeight
+    popHeight = $("#popUp").height()
+    docWidth = document.documentElement.clientWidth
+    popWidth = $("#popUp").width()
+    $("#popUp").css( "display": "block", "top": docHeight/2-popHeight/2, "left": docWidth/2-popWidth/2)
+    $("#popUp").fadeIn("slow")
 
-startCarousel = (interval, selectedItem, numItems) ->
-  return setInterval (->
-    selectedItem += 1
-    selectedItem = 0  if selectedItem is numItems
-    carousel.selectedItem = selectedItem
-    displayImage(selectedItem)
-  ), interval
+  $("#popClose").click ->
+    $("#popBackground").css({"display", "none"})
+    $("#popUp").css({"display", "none"})
 
-displayImage = (selectedItem) ->
-  $(".selected").removeClass "selected"
-  $("#carousel .item:eq(" + selectedItem + ")").addClass "selected"
+  startCarousel = (interval, selectedItem, numItems) ->
+    return setInterval (->
+      selectedItem += 1
+      selectedItem = 0  if selectedItem is numItems
+      carousel.selectedItem = selectedItem
+      displayImage(selectedItem)
+    ), interval
+
+  displayImage = (selectedItem) ->
+    $(".selected").removeClass "selected"
+    $("#carousel .item:eq(" + selectedItem + ")").addClass "selected"
