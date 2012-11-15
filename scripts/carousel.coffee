@@ -34,8 +34,10 @@ $ ->
     popHeight = $("#popUp").height()
     docWidth = document.documentElement.clientWidth
     popWidth = $("#popUp").width()
+    item = $(".selected > img")
     $("#popUp").css( "display": "block", "top": docHeight/2-popHeight/2, "left": docWidth/2-popWidth/2)
     $("#popUp").fadeIn("slow")
+    $("#popContent").append item
 
   $("#popClose").click ->
     $("#popBackground").css({"display", "none"})

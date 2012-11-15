@@ -38,7 +38,7 @@
       return displayImage(carousel.selectedItem);
     });
     $("#pop").click(function() {
-      var docHeight, docWidth, popHeight, popWidth;
+      var docHeight, docWidth, item, popHeight, popWidth;
       $("#popBackground").css({
         "opacity": "0.7",
         "display": "block"
@@ -48,12 +48,14 @@
       popHeight = $("#popUp").height();
       docWidth = document.documentElement.clientWidth;
       popWidth = $("#popUp").width();
+      item = $(".selected > img");
       $("#popUp").css({
         "display": "block",
         "top": docHeight / 2 - popHeight / 2,
         "left": docWidth / 2 - popWidth / 2
       });
-      return $("#popUp").fadeIn("slow");
+      $("#popUp").fadeIn("slow");
+      return $("#popContent").append(item);
     });
     $("#popClose").click(function() {
       $("#popBackground").css({
