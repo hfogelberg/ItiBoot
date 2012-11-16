@@ -6,7 +6,7 @@ $ ->
   interval = 5000
   numItems = $(".item").length
 
-  $("#onOff").click ->
+  $(".tools #onOff").click ->
     if isRunning == false
       carousel.selectedItem += 1
       carousel.selectedItem = 0  if carousel.selectedItem is numItems
@@ -17,17 +17,17 @@ $ ->
       clearInterval(timerId)
       isRunning = false
 
-  $("#next").click ->
+  $(".tools #next").click ->
     carousel.selectedItem += 1
     carousel.selectedItem = 0  if carousel.selectedItem is numItems
     displayImage(carousel.selectedItem)
 
-  $("#previous").click ->
+  $("tools #previous").click ->
     carousel.selectedItem -= 1
     carousel.selectedItem = (numItems - 1) if carousel.selectedItem is 0
     displayImage(carousel.selectedItem)
 
-  $("#pop").click ->
+  $(".tools #pop").click ->
     clearInterval(timerId)
     isRunning = false
     docHeight = document.documentElement.clientHeight
@@ -40,8 +40,25 @@ $ ->
     popWidth = $("#popUp").width
     $("#popBackground").css({ "opacity": "0.7", "display": "block"})
     $("#popBackground").fadeIn("slow")
-    $("#popUp").css( {"display": "block", "height": "auto", "width": "auto", "top": docHeight-popHeight/2, "left": docWidth/2-popWidth/2})
+    #    $("#popUp").css( {"display": "block", "height": "auto", "width": "auto", "top": docHeight-popHeight/2, "left": docWidth/2-popWidth/2})
+    $("#popUp").css( {"display": "block", "height": "auto", "width": "auto", "top": 10})
     $("#popUp").fadeIn("slow")
+
+  $(".popTools #next").click ->
+    $("#popContent").empty()
+    $('#carousel .popImage').removeClass 'popImage'
+    carousel.selectedItem += 1
+    carousel.selectedItem = 0  if carousel.selectedItem is numItems
+    $("#carousel .item:eq(" + carousel.selectedItem + ")").addClass 'popImage'
+    item = $(".popImage :first-child").clone()
+    docHeight = document.documentElement.clientHeight
+    docWidth = document.documentElement.clientWidth
+    imageHeight = (docHeight * 0.7) + "px"
+    item.css({"height": imageHeight, "width": "auto" })
+    popHeight = $("#popUp").height
+    popWidth = $("#popUp").width
+    $("#popContent").empty()
+    $("#popContent").append item
 
   $("#popClose").click ->
     $("#popContent").empty()

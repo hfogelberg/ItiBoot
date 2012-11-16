@@ -9,7 +9,7 @@
     timerId = 0;
     interval = 5000;
     numItems = $(".item").length;
-    $("#onOff").click(function() {
+    $(".tools #onOff").click(function() {
       if (isRunning === false) {
         carousel.selectedItem += 1;
         if (carousel.selectedItem === numItems) {
@@ -23,21 +23,21 @@
         return isRunning = false;
       }
     });
-    $("#next").click(function() {
+    $(".tools #next").click(function() {
       carousel.selectedItem += 1;
       if (carousel.selectedItem === numItems) {
         carousel.selectedItem = 0;
       }
       return displayImage(carousel.selectedItem);
     });
-    $("#previous").click(function() {
+    $("tools #previous").click(function() {
       carousel.selectedItem -= 1;
       if (carousel.selectedItem === 0) {
         carousel.selectedItem = numItems - 1;
       }
       return displayImage(carousel.selectedItem);
     });
-    $("#pop").click(function() {
+    $(".tools #pop").click(function() {
       var docHeight, docWidth, imageHeight, item, popHeight, popWidth;
       clearInterval(timerId);
       isRunning = false;
@@ -61,10 +61,31 @@
         "display": "block",
         "height": "auto",
         "width": "auto",
-        "top": docHeight - popHeight / 2,
-        "left": docWidth / 2 - popWidth / 2
+        "top": 10
       });
       return $("#popUp").fadeIn("slow");
+    });
+    $(".popTools #next").click(function() {
+      var docHeight, docWidth, imageHeight, item, popHeight, popWidth;
+      $("#popContent").empty();
+      $('#carousel .popImage').removeClass('popImage');
+      carousel.selectedItem += 1;
+      if (carousel.selectedItem === numItems) {
+        carousel.selectedItem = 0;
+      }
+      $("#carousel .item:eq(" + carousel.selectedItem + ")").addClass('popImage');
+      item = $(".popImage :first-child").clone();
+      docHeight = document.documentElement.clientHeight;
+      docWidth = document.documentElement.clientWidth;
+      imageHeight = (docHeight * 0.7) + "px";
+      item.css({
+        "height": imageHeight,
+        "width": "auto"
+      });
+      popHeight = $("#popUp").height;
+      popWidth = $("#popUp").width;
+      $("#popContent").empty();
+      return $("#popContent").append(item);
     });
     $("#popClose").click(function() {
       $("#popContent").empty();
