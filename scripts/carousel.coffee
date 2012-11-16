@@ -28,21 +28,26 @@ $ ->
     displayImage(carousel.selectedItem)
 
   $("#pop").click ->
+    clearInterval(timerId)
+    isRunning = false
+    docHeight = document.documentElement.clientHeight
+    docWidth = document.documentElement.clientWidth
+    item = $(".selected :first-child").clone()
+    imageHeight = (docHeight * 0.7) + "px"
+    $("#popContent").append item
+    item.css({"height": imageHeight, "width": "auto" })
+    popHeight = $("#popUp").height
+    popWidth = $("#popUp").width
     $("#popBackground").css({ "opacity": "0.7", "display": "block"})
     $("#popBackground").fadeIn("slow")
-    docHeight = document.documentElement.clientHeight
-    popHeight = $("#popUp").height()
-    docWidth = document.documentElement.clientWidth
-    popWidth = $("#popUp").width()
-    item = $(".selected > img")
-    $("#popUp").css( "display": "block", "top": docHeight/2-popHeight/2, "left": docWidth/2-popWidth/2)
+    $("#popUp").css( {"display": "block", "height": "auto", "width": "auto", "top": docHeight-popHeight/2, "left": docWidth/2-popWidth/2})
     $("#popUp").fadeIn("slow")
-    $("#popContent").append item
 
   $("#popClose").click ->
-    $("#popBackground").css({"display", "none"})
-    $("#popUp").css({"display", "none"})
-
+    $("#popContent").empty()
+    $("#popBackground").css({"display": "none"})
+    $("#popUp").css({"display": "none"})
+    
   startCarousel = (interval, selectedItem, numItems) ->
     return setInterval (->
       selectedItem += 1
